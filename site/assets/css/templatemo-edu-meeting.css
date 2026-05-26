@@ -1767,6 +1767,16 @@ responsive
 
 @media (max-width: 992px) {
 
+  .main-banner {
+    margin-bottom: 0;
+    background: #1f272b;
+  }
+
+  #bg-video {
+    display: block;
+    vertical-align: middle;
+  }
+
   .main-banner .caption {
     top: 60%;
   }
@@ -1782,16 +1792,23 @@ responsive
   }
 
   .services {
-    margin-top: 60px;
+    position: relative;
+    margin-top: 0;
+    padding: 40px 0 20px 0;
+    background: #1f272b;
   }
 
   section.upcoming-meetings {
-    padding-top: 400px;
+    padding-top: 80px;
   }
 
   section.upcoming-meetings .categories {
     margin-right: 0px;
     margin-bottom: 30px;
+  }
+
+  section.our-facts {
+    padding-top: 20px;
   }
 
   .accordions {
@@ -1811,6 +1828,9 @@ responsive
     margin-bottom: 30px;
   }
 
+  .video-wrapper {
+    margin-top: 15px;
+  }
 }
 
 @media (max-width: 767px) {
