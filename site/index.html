@@ -30,77 +30,8 @@ https://templatemo.com/tm-569-edu-meeting
   </head>
 
 <body>
-
-  <!-- Sub Header -->
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-4">
-          <div class="right-icons">
-            <ul>
-              <li><a href="https://nhshbhs.com" target="_blank"><button type="button" class="btn btn-outline-danger btn-sm">NHS App</button></a></li>
-              <li><a href="https://www.instagram.com/nhsoilers/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
-              <li><a href="mailto:nhsoiler@gmail.com" target="_blank"><i class="fa fa-envelope-o fa-lg"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                        <img src="assets/images/nhshbhs_logo.png" style="width: 100px;">
-                        NHS <span class="hbhs-header">HBHS</span>
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">About</a>
-                              <ul class="sub-menu">
-                                  <li><a href="mission.html">Chapter Information</a></li>
-                                  <li><a href="board.html">Executive Board</a></li>
-                                  <li><a href="eligibility.html">Eligibility</a></li>
-                                  <li><a href="faq.html">FAQ</a></li>
-                              </ul>
-                          </li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Tutoring</a>
-                              <ul class="sub-menu">
-                                  <li><a href="library.html">Library Tutoring</a></li>
-                                  <li><a href="writing.html">Writing Lab</a></li>
-                              </ul>
-                          </li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Projects</a>
-                              <ul class="sub-menu">
-                                  <li><a href="sophomore.html">Sophomore Projects</a></li>
-                                  <li><a href="weeklydoc.html">Weekly Doc</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="needvolunteers.html"><button type="button" class="btn btn-warning btn-sm">Need Volunteers?</button></a></li> 
-                        </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+  <!-- *** Header *** -->
+  <div id="header-placeholder"></div>
 
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
@@ -173,29 +104,29 @@ https://templatemo.com/tm-569-edu-meeting
                 <div class="col-12">
                   <div class="count-area-content">
                     <div class="count-digit">11,761</div>
-                    <div class="count-title">Hours</div>
+                    <div class="count-title">Volunteer Hours</div>
                   </div>
                 </div>
+                <div class="col-12">
+                  <div class="count-area-content new-students">
+                    <div class="count-digit">323</div>
+                    <div class="count-title">Total Members</div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
                 <div class="col-12">
                   <div class="count-area-content">
                     <div class="count-digit">5,389</div>
                     <div class="count-title">Events</div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="row">
-                <div class="col-12">
-                  <div class="count-area-content new-students">
-                    <div class="count-digit">323</div>
-                    <div class="count-title">Students</div>
-                  </div>
-                </div> 
                 <div class="col-12">
                   <div class="count-area-content">
-                    <div class="count-digit">32</div>
-                    <div class="count-title">Awards</div>
+                    <div class="count-digit">141</div>
+                    <div class="count-title">New Inductees</div>
                   </div>
                 </div>
               </div>
@@ -214,14 +145,7 @@ https://templatemo.com/tm-569-edu-meeting
   </section>
 
   <section class="contact-us" id="contact">
-    <div class="footer">
-      <img src="assets/images/award_2025.webp" style="width: 150px;">
-      <p>Copyright © 2026 NHS HBHS. All Rights Reserved.
-          <br>
-          <span class="text-muted text-sm">Design: <a href="https://templatemo.com" target="_blank" title="free css templates" class="text-reset">TemplateMo</a>
-          Distibuted By: <a href="https://themewagon.com" target="_blank" title="Build Better UI, Faster" class="text-reset">ThemeWagon</a></span>
-      </p>
-    </div>
+  <div id="footer-placeholder"></div>
   </section>
 
   <!-- Scripts -->
@@ -237,6 +161,14 @@ https://templatemo.com/tm-569-edu-meeting
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+        fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
         //according to loftblog tut
         $('.nav li:first').addClass('active');
 

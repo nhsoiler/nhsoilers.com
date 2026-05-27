@@ -982,6 +982,11 @@ section.upcoming-meetings .categories .main-button-red a {
   border-bottom-left-radius: 20px;
 }
 
+.meeting-single-item .down-content.no-border-radius {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .meeting-item .down-content .date {
   float: left;
   text-align: center;
@@ -1438,7 +1443,7 @@ section.contact-us .right-info ul li span {
   text-align: center;
   margin-top: 0px;
   border-top: 1px solid rgba(250,250,250,0.15);
-  padding: 50px 0px;
+  padding: 25px 0px;
 }
 .footer p {
   text-transform: uppercase;
@@ -1458,13 +1463,28 @@ heading page
 */
 
 section.heading-page {
-  background-image: url(../images/heading-bg.jpg);
+  position: relative;
+  background-image: url(../images/library-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 230px;
-  padding-bottom: 110px;
+  padding-top: 125px;
+  padding-bottom: 25px;
   text-align: center;
+  overflow: hidden;
+}
+
+section.heading-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* darkness/transparency */
+  z-index: 1;
+}
+
+section.heading-page * {
+  position: relative;
+  z-index: 2;
 }
 
 section.heading-page h6 {
@@ -1499,7 +1519,7 @@ section.meetings-page {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 140px;
+  padding-top: 50px;
   padding-bottom: 0px;
 }
 
@@ -1873,4 +1893,63 @@ responsive
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.logo {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* 1. Targets tags inside a parent container with the class */
+.hbhs-text h1, .hbhs-text h2, .hbhs-text h3, .hbhs-text h4, 
+.hbhs-text h5, .hbhs-text h6, .hbhs-text p, .hbhs-text span, .hbhs-text a,
+
+/* 2. Targets the class applied DIRECTLY to the tags (no dot before the tag name) */
+h1.hbhs-text, h2.hbhs-text, h3.hbhs-text, h4.hbhs-text, 
+h5.hbhs-text, h6.hbhs-text, p.hbhs-text, a.hbhs-text,
+
+/* 3. Targets the class generic usage */
+.hbhs-text {
+  color: #f68b14 !important;
+}
+
+/* 1. Normal State */
+.btn-hbhs {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #f68b14;
+  --bs-btn-border-color: #f68b14;
+  
+  /* Hover States */
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #dd7509; /* Slightly darker orange */
+  --bs-btn-hover-border-color: #cf6d08;
+  
+  /* Focus / Outline Ring State */
+  --bs-btn-focus-shadow-rgb: 246, 139, 20; /* RGB equivalent of #f68b14 */
+  
+  /* Active / Clicked States */
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #cf6d08;
+  --bs-btn-active-border-color: #c16507;
+  
+  /* Disabled State */
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #f68b14;
+  --bs-btn-disabled-border-color: #f68b14;
+}
+
+/* 2. Legacy / Deep Override (Ensures it beats Bootstrap's core overrides) */
+.btn-hbhs {
+  color: #fff !important;
+  background-color: #f68b14 !important;
+  border-color: #f68b14 !important;
+}
+
+.btn-hbhs:hover {
+  background-color: #dd7509 !important;
+  border-color: #cf6d08 !important;
+}
+
+.btn-hbhs:active, .btn-hbhs.active {
+  background-color: #cf6d08 !important;
+  border-color: #c16507 !important;
 }
