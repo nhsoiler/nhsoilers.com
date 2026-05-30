@@ -243,43 +243,29 @@
 
 	
 
-	const dropdownOpener = $('.main-nav ul.nav .has-sub > a');
+	$(document).on('click', '.main-nav ul.nav .has-sub > a', function(e) {
 
-    // Open/Close Submenus
-    if (dropdownOpener.length) {
-        dropdownOpener.each(function () {
-            var _this = $(this);
+		var thisItemParent = $(this).parent('li'),
+			thisItemParentSiblingsWithDrop = thisItemParent.siblings('.has-sub');
 
-            _this.on('tap click', function (e) {
-                var thisItemParent = _this.parent('li'),
-                    thisItemParentSiblingsWithDrop = thisItemParent.siblings('.has-sub');
+		var submenu = thisItemParent.find('> ul.sub-menu');
 
-                if (thisItemParent.hasClass('has-sub')) {
-                    var submenu = thisItemParent.find('> ul.sub-menu');
+		if (submenu.is(':visible')) {
+			submenu.slideUp(450);
+			thisItemParent.removeClass('is-open-sub');
+		} else {
+			thisItemParent.addClass('is-open-sub');
 
-                    if (submenu.is(':visible')) {
-                        submenu.slideUp(450, 'easeInOutQuad');
-                        thisItemParent.removeClass('is-open-sub');
-                    } else {
-                        thisItemParent.addClass('is-open-sub');
+			thisItemParentSiblingsWithDrop
+				.removeClass('is-open-sub')
+				.find('.sub-menu')
+				.slideUp(250);
 
-                        if (thisItemParentSiblingsWithDrop.length === 0) {
-                            thisItemParent.find('.sub-menu').slideUp(400, 'easeInOutQuad', function () {
-                                submenu.slideDown(250, 'easeInOutQuad');
-                            });
-                        } else {
-                            thisItemParent.siblings().removeClass('is-open-sub').find('.sub-menu').slideUp(250, 'easeInOutQuad', function () {
-                                submenu.slideDown(250, 'easeInOutQuad');
-                            });
-                        }
-                    }
-                }
+			submenu.slideDown(250);
+		}
 
-                e.preventDefault();
-            });
-        });
-    }
-
+		e.preventDefault();
+	});
 
 	function visible(partial) {
         var $t = partial,
