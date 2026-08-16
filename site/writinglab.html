@@ -17,10 +17,38 @@
       height: auto;
       margin: 0 auto;
     }
-  </style>
+
+    .signup-link {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+
+        color: #fff;
+        background: #ff6a00;
+        border: 2px solid #000;
+        padding: 12px 20px;
+        border-radius: 999px;
+
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .signup-link:hover {
+        background: #ff7a1a;
+        transform: translateY(-2px);
+    }
+</style>
 </head>
 
 <body>
   <img src="assets/images/writinglab2.jpg" alt="">
+  <a href="https://docs.google.com/document/d/1h3L9FgYhwfWByA3Srdm6Mozfr8hbLKeLhtZ54VAXUG4/edit?usp=sharing" class="signup-link">Sign Up</a>
 </body>
 </html>
